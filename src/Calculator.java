@@ -17,32 +17,12 @@ public class Calculator {
 		int b = Integer.parseInt(args[2]);
 		String operator = args[0];
 
-		float result = getResult(a, b, operator);
-	 	args[3] = result+"";
+		CalculatorService calculatorService = new CalculatorService();
+
+		float result = calculatorService.getResult(a, b, operator);
+//	 	args[3] = result+"";
 	}
 
-	private static float getResult(int a, int b, String operator) {
-		float result = 0;
 
-		switch (operator) {
-			case "+":
-				result = a + b;
-				break;
-			case "-":
-				result = a - b;
-				break;
-			case "*":
-				result = a * b;
-				break;
-			case "/":
-				result = (float) a / b;
-				break;
-			default:
-				result = ERROR_CODE;
-		}
-
-		System.out.println("[Calculator.main] result is: "+result);
-		return result;
-	}
 }
 
